@@ -1,10 +1,18 @@
 def merge_sets():
-    set_1 = eval(input('Enter your set, example: {1, 2, 3}): '))
-    set_2 = eval(input('Enter one more set, example: {3, 4, 5} '))
-    if isinstance(set_1, set) and isinstance(set_2, set):
-        print('Merged set', set_1 | set_2)
-    else:
-        print('Error')
+    def input_set():
+        some_set = set()
+        number_of_elements = int(input('Enter number of elements: '))
+        for _ in range(number_of_elements):
+            some_set.add(input('Enter element: '))
+        return some_set
+
+    print('First set: ')
+    set1 = input_set()
+
+    print('Second set: ')
+    set2 = input_set()
+
+    print('Merged set', set1 | set2)
 
 
 merge_sets()
